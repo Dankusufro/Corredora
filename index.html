@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MiCorredora | Encuentra tu hogar ideal</title>
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <!-- Animate.css (simple entry animations) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+    <style>
+        :root {
+            --primary: #0d6efd; /* Azul Bootstrap */
+            --secondary: #17c3b2; /* Turquesa personalizado */
+            --dark: #212529;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+        /* Hero */
+        #hero {
+            background: url('https://images.unsplash.com/photo-1600585154356-596af9009e1e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            min-height: 90vh;
+            position: relative;
+            color: #fff;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(13, 110, 253, .85), rgba(23, 195, 178, .85));
+        }
+
+        #hero .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        /* Services */
+        .service-icon {
+            width: 72px;
+            height: 72px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: #fff;
+            margin-bottom: 1rem;
+            transition: transform .3s ease;
+        }
+
+        .service-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Properties */
+        .card-property {
+            border: none;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .card-property img {
+            height: 220px;
+            object-fit: cover;
+            transition: transform .3s ease;
+        }
+
+        .card-property:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, .15);
+        }
+
+        .card-property:hover img {
+            transform: scale(1.05);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: #fff;
+        }
+
+        /* Contact */
+        .contact-info i {
+            color: var(--secondary);
+            width: 36px;
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+        }
+
+        /* Animations on scroll (simple AOS-like) */
+        [data-aos] { /* initial state */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .6s ease-out, transform .6s ease-out;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#hero">MiCorredora</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#propiedades">Propiedades</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header id="hero" class="d-flex align-items-center">
+    <div class="container text-center hero-content">
+        <h1 class="fw-bold mb-3 animate__animated animate__fadeInDown">Haz realidad tu próximo hogar</h1>
+        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Asesoría experta y transparente en
+            compra, venta y arriendo de propiedades.</p>
+        <a href="#propiedades" class="btn btn-light btn-lg animate__animated animate__fadeInUp animate__delay-2s">Ver
+            Propiedades</a>
+    </div>
+</header>
+
+<!-- Servicios -->
+<section id="servicios" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5" data-aos>Servicios</h2>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos>
+                <div class="text-center px-4">
+                    <div class="service-icon mb-3"><i class="fa-solid fa-handshake fa-lg"></i></div>
+                    <h5 class="fw-semibold">Compra &amp; Venta</h5>
+                    <p>Acompañamos todo el proceso: desde la tasación hasta la firma.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos>
+                <div class="text-center px-4">
+                    <div class="service-icon mb-3"><i class="fa-solid fa-key fa-lg"></i></div>
+                    <h5 class="fw-semibold">Arriendos Seguros</h5>
+                    <p>Gestión integral para que tu renta sea segura y rentable.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos>
+                <div class="text-center px-4">
+                    <div class="service-icon mb-3"><i class="fa-solid fa-scale-balanced fa-lg"></i></div>
+                    <h5 class="fw-semibold">Tasaciones Profesionales</h5>
+                    <p>Valoramos tu propiedad con análisis de mercado detallado.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Propiedades -->
+<section id="propiedades" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5" data-aos>Propiedades Destacadas</h2>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4" data-aos>
+                <div class="card card-property h-100">
+                    <img src="https://images.unsplash.com/photo-1572120360610-d971b9efc6b7?auto=format&fit=crop&w=800&q=80"
+                         class="card-img-top" alt="Departamento en Providencia">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-semibold mb-1">$150.000.000 | 3D · 2B</h5>
+                        <p class="card-text text-muted small mb-3"><i class="fa-solid fa-location-dot me-1"></i>Providencia,
+                            Santiago</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto w-100">Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4" data-aos data-aos-delay="100">
+                <div class="card card-property h-100">
+                    <img src="https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=800&q=80"
+                         class="card-img-top" alt="Departamento en Ñuñoa">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-semibold mb-1">$90.000.000 | 2D · 1B</h5>
+                        <p class="card-text text-muted small mb-3"><i class="fa-solid fa-location-dot me-1"></i>Ñuñoa,
+                            Santiago</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto w-100">Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4" data-aos data-aos-delay="200">
+                <div class="card card-property h-100">
+                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80"
+                         class="card-img-top" alt="Casa en La Reina">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-semibold mb-1">$220.000.000 | 4D · 3B</h5>
+                        <p class="card-text text-muted small mb-3"><i class="fa-solid fa-location-dot me-1"></i>La
+                            Reina, Santiago</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto w-100">Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section py-5 text-center">
+    <div class="container" data-aos>
+        <h2 class="fw-bold mb-3">¿Listo para dar el próximo paso?</h2>
+        <p class="lead mb-4">Contacta a nuestros agentes y recibe asesoría personalizada.</p>
+        <a href="#contacto" class="btn btn-light btn-lg px-4">Contáctanos</a>
+    </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5" data-aos>Contacto</h2>
+        <div class="row g-4">
+            <div class="col-lg-6" data-aos>
+                <div class="contact-info d-flex flex-column gap-3">
+                    <p><i class="fa-solid fa-phone me-2"></i><strong>+56 9 1234 5678</strong></p>
+                    <p><i class="fa-solid fa-envelope me-2"></i>contacto@micorredora.cl</p>
+                    <p><i class="fa-solid fa-location-dot me-2"></i>Avenida Las Casas 1234, Santiago</p>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos>
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm"> /* Responsive Google Maps */
+                    <iframe src="https://maps.google.com/maps?q=-39.363985, -72.6161203&amp;z=14&amp;output=embed"
+                            loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4 text-center">
+    <div class="container small">
+        © <span id="year"></span> MiCorredora. Todos los derechos reservados.
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+<script>
+    // Año dinámico en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple AOS (intersection observer)
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('aos-animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.15});
+
+    document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
